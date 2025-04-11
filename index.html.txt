@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Empregos Pagos via Pix</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #111;
+      color: #fff;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background-color: #0d0d0d;
+      padding: 20px;
+      text-align: center;
+      border-bottom: 3px solid #00ff88;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2em;
+    }
+    main {
+      padding: 30px;
+      max-width: 600px;
+      margin: auto;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+    input, textarea, select {
+      margin-bottom: 15px;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+    }
+    button {
+      background-color: #00ff88;
+      color: #000;
+      padding: 12px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    .pix-info {
+      background-color: #222;
+      padding: 15px;
+      border: 1px solid #00ff88;
+      border-radius: 5px;
+      margin-top: 20px;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Cadastre-se para Trabalhos Pagos via Pix</h1>
+  </header>
+  <main>
+    <p>Preencha seus dados abaixo e garanta seu acesso a empregos rápidos com pagamento direto no Pix.</p>
+    <form id="jobForm" action="#" method="POST">
+      <input type="text" name="nome" placeholder="Seu nome completo" required>
+      <input type="email" name="email" placeholder="Seu melhor e-mail" required>
+      <input type="text" name="telefone" placeholder="WhatsApp com DDD" required>
+      <textarea name="experiencia" placeholder="Fale um pouco da sua experiência" rows="4" required></textarea>
+      <select id="tipoEmprego" name="tipoEmprego" required>
+        <option value="">Escolha o tipo de emprego</option>
+        <option value="presencial">Presencial</option>
+        <option value="homeoffice">Home Office</option>
+      </select>
+      <button type="submit">Quero Trabalhar</button>
+    </form>
+
+    <div id="pixInfo" class="pix-info">
+      <h3>Pagamento via PIX</h3>
+      <p>Todo pagamento é feito por PIX após serviço aprovado.</p>
+      <p><strong>Chave Pix:</strong> <span style="color: #00ff88;">5542998519232</span></p>
+      <p>Salva esse número, é por onde a grana pinga quando tu entrega.</p>
+    </div>
+  </main>
+
+  <script>
+    document.getElementById('tipoEmprego').addEventListener('change', function () {
+      const pixInfo = document.getElementById('pixInfo');
+      if (this.value === 'homeoffice') {
+        pixInfo.style.display = 'block';
+      } else {
+        pixInfo.style.display = 'none';
+      }
+    });
+  </script>
+</body>
+</html>
